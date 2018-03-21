@@ -9,6 +9,7 @@
       <a class="navbar-brand" href="/">Codepedia</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+      
 
       <ul class="nav navbar-nav navbar-right">
           <!-- Authentication Links -->

@@ -126,7 +126,7 @@ class CategoryController extends Controller
             DB::beginTransaction();
 
                 $category = Category::find($id);
-                $category->forceDelete();
+                $category->delete();
 
 
             $request->session()->flash('alert-success','Data successfully deleted');

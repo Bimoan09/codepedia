@@ -12,6 +12,13 @@ $menus = App\Admin\Category::where('is_active', TRUE)->get();
       <a class="navbar-brand" href="{{ url('/') }}">Codepedia</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
+      <form class="navbar-form navbar-left" method="GET" action="{{url('index')}}">
+        <form id="elasticScout" action="/SearchQuery" method="get">
+       <div class="mysearchbar">
+           <input name="search" placeholder="Search...">
+       </div>
+  </form>
+     </form>
       <ul class="nav navbar-nav">
         {{-- <li class="active"><a href="#">Home</a></li> --}}
         @if($menus)

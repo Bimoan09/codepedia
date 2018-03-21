@@ -4,12 +4,16 @@ namespace App\Admin;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 
 class Article extends Model
 {
     use SoftDeletes;
 
     protected $dates = ['deleted_at'];
+
+    use Searchable;
+    protected $fillable =['title'];
 
     public function category()
     {

@@ -11,12 +11,24 @@ use App\Visitor;
 
 class HomeController extends Controller
 {
+
+  //
+  // public function search(Request $request)
+  //    {
+  //       $query = $request->get('search');
+  //       $hasil = DB::table('articles')
+  //                         ->where('title', 'LIKE', '%' . $query . '%')
+  //                         ->paginate(10);
+  //
+  //
+  //       return view('result' , compact(''));
+  //    }
     public function index($id)
     {
     	$data['articles'] = Article::whereRaw('category_id='.$id.' AND is_show = TRUE')
                             ->orderBy('created_at', 'DESC')
                             ->paginate(5);
-      
+
     	return view('index', $data);
     }
 

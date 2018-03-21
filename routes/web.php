@@ -18,6 +18,12 @@ Route::get('/', function()
 Route::get('article/{id}', 'HomeController@index');
 Route::get('/article/{id}/show', 'HomeController@showArticle');
 Route::post('/article/{id}/store', ['as' => 'article.store', 'uses'=> 'HomeController@storeComment']);
+Route::get('/index', function () {
+    return view('index', [
+        'articles' => App\Admin\Article::all(),
+    ]);
+});
+
 //Route::post('/article/post_reply/{id}', ['as' => 'article.post_reply', 'uses'=> 'HomeController@post_reply']);
 Route::post('/contact', function()
 {

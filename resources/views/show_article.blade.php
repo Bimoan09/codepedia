@@ -1,4 +1,4 @@
-@extends('layouts.master')
+<!-- @extends('layouts.master') -->
 
 @section('main-content')
 <style type="text/css">
@@ -54,8 +54,8 @@
 			<div class="box-body">
 				<h3 class="text-bold">{{ $article->title }}</h3>
 			</div>
-			<h6 class="date-comments"><i class="fa fa-user"></i> {{ ucwords($article->user->name) }} &nbsp;&nbsp;<i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($article->created_at)) }} <i class="fa fa-comments"> {{ count($count) }}</i></h6>
-		<div class="post-thumb"><img src="{{ asset('/images/'.$article->header_pic)  }}" class="img-responsive" width="304" height="236"></div>
+			<h6 class="date-comments"><i class="fa fa-user"></i> {{ ucwords($article->user->name) }} &nbsp;&nbsp;<i class="fa fa-calendar"></i> {{ date('d M Y H:i:s', strtotime($article->created_at)) }} <i class="fa fa-comments"> {{ count($count) }}</i></h6>
+		<!-- <div class="post-thumb"><img src="{{ asset('/images/'.$article->header_pic)  }}" class="img-responsive" width="304" height="236"></div> -->
 			<?php echo $article->content; ?>
 		</div>
 </div>
@@ -82,10 +82,12 @@
 		          </div>
 		        </div>
 			</div>
+
 			<input type="hidden" name="commentType" class="commentType" value = "0">
 			<div class="box-footer">
 			    <button type="submit" class="btn btn-info"><i class="fa fa-save"></i> Kirim</button>
 			</div>
+
 			<hr>
 			<div class="flash-message">
 			@foreach (['danger','warning','success','info'] as $pesan)
