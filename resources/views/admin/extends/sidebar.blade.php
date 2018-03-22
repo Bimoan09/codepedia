@@ -3,7 +3,7 @@
 @else
 <div class="col-sm-2 sidenav">
 	<ul class="nav flex-column flex-nowrap">
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link" href="#" data-toggle="collapse" data-target="#submenu"><i class="fa fa-file"></i> <span>Static Page</span><i class="fa fa-angle-down pull-right"></i> </a>
             <div class="collapse" id="submenu" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
@@ -11,7 +11,7 @@
                     <li class="nav-item"><a class="nav-link" href="#"><i class="fa fa-angle-right"></i> <span> Contact</span></a></li>
                 </ul>
             </div>
-        </li>
+        </li> -->
         <li class="nav-item"><a class="nav-link" href="{{ url('/admin/categories') }}"><i class="fa fa-object-group"></i> <span> Category</span></a></li>
         <li class="nav-item"><a class="nav-link" href="{{ url('/admin/articles') }}"><i class="fa fa-newspaper-o"></i> <span> Articles</span></a></li>
         <li class="nav-item">
@@ -28,7 +28,7 @@
             <div class="collapse" id="sub" aria-expanded="false">
                 <ul class="flex-column pl-2 nav">
                     <li class="nav-item"><a class="nav-link" href="{{ url('/admin/users') }}"><i class="fa fa-angle-right"></i> <span> Users List</span></a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ url('/admin/users/'.Auth::user()->id) }}"><i class="fa fa-angle-right"></i> <span> View Profile</span></a></li>	
+                    <li class="nav-item"><a class="nav-link" href="{{ url('/admin/users/'.Auth::user()->id) }}"><i class="fa fa-angle-right"></i> <span> View Profile</span></a></li>
                 </ul>
             </div>
         </li>
@@ -41,6 +41,25 @@
                 </ul>
             </div>
         </li>
+				<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+								{{ ucwords(Auth::user()->name) }} <span class="caret"></span>
+						</a>
+
+						<ul class="dropdown-menu" role="menu">
+								<li>
+										<a href="{{ route('logout') }}"
+												onclick="event.preventDefault();
+																 document.getElementById('logout-form').submit();">
+												Logout
+										</a>
+
+										<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+												{{ csrf_field() }}
+										</form>
+								</li>
+						</ul>
+				</li>
     </ul>
 </div>
 @endif

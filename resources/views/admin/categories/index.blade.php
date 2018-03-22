@@ -66,7 +66,7 @@
 </form>
 <script>
 
-function deletedata(id) 
+function deletedata(id)
 {
 	if(confirm('Apakah anda yakin akan menghapus data ini ?'))
 	{

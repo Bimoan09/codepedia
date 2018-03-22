@@ -34,7 +34,9 @@
 		                    </select>
 		                  </div>
 		                </div>
-		                
+
+
+
 		                <div class="form-group">
 		                  <label for="title" class="col-sm-2 control-label">Title</label>
 		                  <div class="col-sm-10">

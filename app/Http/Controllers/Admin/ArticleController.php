@@ -19,7 +19,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(10);
+        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(50);
 
         return view('admin.articles.index', $data);
     }
@@ -55,14 +55,6 @@ class ArticleController extends Controller
         try {
             DB::beginTransaction();
             $article = new Article;
-            // $this->validate($request, [
-            // // check validtion for image or file
-            //         'header_pic' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-            //     ]);
-            // // rename image name or file name
-            // $getimageName = time().'.'.$request->header_pic->getClientOriginalExtension();
-            // $request->header_pic->move(public_path('images'), $getimageName);
-
             $article->user_id = Auth::user()->id;
             $article->category_id = $request->category_id;
             $article->title = $request->title;
@@ -123,22 +115,6 @@ class ArticleController extends Controller
         try {
             DB::beginTransaction();
             $article = Article::find($id);
-            if($request->header_pic)
-            {
-                if(File::exists(public_path() .'/images/'.$article->header_pic))
-                {
-                    File::delete('images/' . $article->header_pic);
-                }
-                $this->validate($request, [
-                // check validtion for image or file
-                        'header_pic' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
-                    ]);
-                // rename image name or file name
-                $getimageName = time().'.'.$request->header_pic->getClientOriginalExtension();
-                $request->header_pic->move(public_path('images'), $getimageName);
-
-            }
-
             $article->user_id = Auth::user()->id;
             $article->category_id = $request->category_id;
             $article->title = $request->title;

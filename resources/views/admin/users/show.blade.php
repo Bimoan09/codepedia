@@ -12,7 +12,7 @@
 			  	<div class="panel-heading clearfix">
 			  		<h3 class="panel-title pull-left">Users profile</h3>
 					<div class="pull-right">
-						
+
 					</div>
 				</div>
 			  <div class="panel-body">

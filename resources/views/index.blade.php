@@ -5,7 +5,15 @@
 	.post-container {
 	    margin: 1px;
 	}
-
+	/* .post-thumb {
+	    float: left
+	} */
+	/* .post-thumb img {
+	    display: block;
+	    max-height:150px;
+	    max-width:150px;
+	    margin-top:10px;
+	} */
 	.post-content {
 	    margin-left: 160px
 	}
@@ -48,7 +56,7 @@
 					<h4 class="post-title">{{ $data->title }}</h4>
 					<h6 class="date-comment"><i class="fa fa-user"></i> {{ ucwords($data->user->name) }} &nbsp;&nbsp;<i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($data->created_at)) }} &nbsp;&nbsp;<i class="fa fa-comments"> {{ $data->comment->count() }}</i></h6>
 					<div class="post-container">
-
+						<!-- <div class="post-thumb"><img src="{{ asset('/images/'.$data->header_pic)  }}" class="img-responsive" width="304" height="236"></div> -->
 					    <div class="post-content">
 					        <p><?php echo substr($data->content, 0, 300); ?><a href="{{ '/article/'.$data->id.'/show' }}">Read more...</a></p>
 					   </div>
@@ -61,6 +69,6 @@
 		</div>
 		@endforeach
 	@else
-		<div class="text-center" id="not_found">Data not Available</div>
+		<div class="text-center" id="not_found">Maaf belum ada artikel di Kategori ini</div>
 	@endif
 @endsection
