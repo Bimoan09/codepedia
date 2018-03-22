@@ -9,7 +9,7 @@
 + run **php artisan serve**
 + run **localhost:8000** => you  see home interface.. **Register** then you redirect to **admin/home** and try to made your first article
 
-
+this is your home interface  
 
 
 
