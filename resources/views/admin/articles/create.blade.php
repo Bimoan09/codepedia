@@ -16,7 +16,7 @@
 				</div>
 			  <div class="panel-body">
 			  	<div class="col-md-12">
-		          <!-- Horizontal Form -->
+		          Horizontal Form
 		          <div class="box box-info">
 		            <!-- /.box-header -->
 		            <!-- form start -->
@@ -34,7 +34,7 @@
 		                    </select>
 		                  </div>
 		                </div>
-		                
+
 		                <div class="form-group">
 		                  <label for="title" class="col-sm-2 control-label">Title</label>
 		                  <div class="col-sm-10">

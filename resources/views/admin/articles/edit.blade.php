@@ -11,7 +11,7 @@
 			  	<div class="panel-heading clearfix">
 			  		<h3 class="panel-title pull-left">Edit Article</h3>
 					<div class="pull-right">
-						
+
 					</div>
 				</div>
 			  <div class="panel-body">
@@ -35,12 +35,7 @@
 		                    </select>
 		                  </div>
 		                </div>
-		                <div class="form-group">
-		                  <label for="header_pic" class="col-sm-2 control-label">Header Picture</label>
-		                  <div class="col-sm-10">
-		                    <input type="file" name="header_pic" accept="image/*" id="header_pic" value="{{ $article->header_pic }}" placeholder="Header Picture">
-		                  </div>
-		                </div>
+		               
 		                <div class="form-group">
 		                  <label for="title" class="col-sm-2 control-label">Title</label>
 		                  <div class="col-sm-10">

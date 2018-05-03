@@ -56,7 +56,7 @@
 			  					<td>{{ $data->category->title }}</td>
 			  					<td><a href="{{ route('articles.show', $data->id) }}" title="Preview">{{ $data->title }}</td></td>
 			  					<td><?php echo substr($data->content,0, 100); ?></td>
-			  					<!-- <td class="text-center"><img src="{{ asset('/images/'.$data->header_pic)  }}" style="max-height:100px;max-width:100px;margin-top:10px;"></td> -->
+			  					
 			  					<td class="text-center">{{ date('Y-M-d H:i:s', strtotime($data['created_at'])) }}</td>
 			  					<td>
 			  						@if($data->is_show == TRUE)
