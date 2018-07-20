@@ -19,7 +19,8 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $data['articles'] = Article::orderBy('created_at', 'DESC')->paginate(50);
+        $data['articles'] = Article::where('user_id', Auth::user()->id)
+                            ->orderBy('created_at', 'DESC')->paginate(50);
 
         return view('admin.articles.index', $data);
     }
