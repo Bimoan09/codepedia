@@ -1,38 +1,9 @@
- <?php
-$menus = App\Admin\Category::where('is_active', TRUE)->get();
-?> 
-<nav class="navbar navbar-inverse" id="header">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="{{ url('/') }}">Codepedia</a>
-    </div>
-<<<<<<< HEAD
-
-
-
-=======
-    
->>>>>>> 752ab242ed2e1f9b0ace07f38c1d8975f7a2dd08
-  </form>
-     </form>
-      <ul class="nav navbar-nav">
-        {{-- <li class="active"><a href="#">Home</a></li> --}}
-        @if($menus)
-          @foreach($menus as $menu)
-            <li><a href="{{ url('article/'.$menu->id) }}">{{ ucwords($menu->title) }}</a></li>
-          @endforeach
-        @endif
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
+<ul class="nav navbar-nav navbar-right">
           <!-- Authentication Links -->
           @if (Auth::guest())
               <li><a href="{{ route('login') }}">Login</a></li>
               <li><a href="{{ route('register') }}">Register</a></li>
+              <li><a href="#">Chat</a></li>
 
           @else
               <li class="dropdown">
@@ -56,6 +27,3 @@ $menus = App\Admin\Category::where('is_active', TRUE)->get();
               </li>
           @endif
       </ul>
-    </div>
-  </div>
-</nav>

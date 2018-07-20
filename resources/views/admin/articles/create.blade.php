@@ -16,7 +16,7 @@
 				</div>
 			  <div class="panel-body">
 			  	<div class="col-md-12">
-		          <!-- Horizontal Form -->
+		          Horizontal Form
 		          <div class="box box-info">
 		            <!-- /.box-header -->
 		            <!-- form start -->

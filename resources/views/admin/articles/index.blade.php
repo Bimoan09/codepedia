@@ -57,6 +57,7 @@
 			  					<td><a href="{{ route('articles.show', $data->id) }}" title="Preview">{{ $data->title }}</td></td>
 			  					<td><?php echo substr($data->content,0, 100); ?></td>
 			  				
+			  					
 			  					<td class="text-center">{{ date('Y-M-d H:i:s', strtotime($data['created_at'])) }}</td>
 			  					<td>
 			  						@if($data->is_show == TRUE)
