@@ -16,7 +16,7 @@ class CreateTableCategories extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->boolean('is_active')->default(true);
+            $table->boolean('is_active')->default(1);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -29,6 +29,7 @@ class CreateTableCategories extends Migration
      */
     public function down()
     {
+        Schema::dropIfExists('articles');
         Schema::dropIfExists('categories');
     }
 }

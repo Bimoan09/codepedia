@@ -25,7 +25,7 @@ class HomeController extends Controller
   //    }
     public function index($id)
     {
-    	$data['articles'] = Article::whereRaw('category_id='.$id.' AND is_show = TRUE')
+    	$data['articles'] = Article::whereRaw('category_id= '.$id.' AND is_show = 1')
                             ->orderBy('created_at', 'DESC')
                             ->paginate(5);
 

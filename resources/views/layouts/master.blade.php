@@ -236,7 +236,7 @@
 </head>
 <body>
 <?php
-$menus = App\Admin\Category::where('is_active', TRUE)->get();
+$data = App\Admin\Category::where('is_active', TRUE)->get();
 ?> 
 <div class="container-fluid main">
 
@@ -254,9 +254,9 @@ $menus = App\Admin\Category::where('is_active', TRUE)->get();
       <ul class="nav navbar-nav">
         <li><a href="#">About</a></li>
         <li><a href="#">Contact Us</a></li>
-        @if($menus)
-          @foreach($menus as $menu)
-            <li><a href="{{ url('article/'.$menu->id) }}">{{ ucwords($menu->title) }}</a></li>
+        @if($data)
+          @foreach($data as $datas)
+            <li><a href="{{ url('article/'.$datas->id) }}">{{ ucwords($datas->title) }}</a></li>
           @endforeach
         @endif
         <ul class="nav navbar-nav navbar-right">

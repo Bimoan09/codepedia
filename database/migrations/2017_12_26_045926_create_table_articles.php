@@ -14,6 +14,7 @@ class CreateTableArticles extends Migration
     public function up()
     {
         Schema::create('articles', function (Blueprint $table) {
+        
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
@@ -22,7 +23,6 @@ class CreateTableArticles extends Migration
             $table->boolean('is_show')->default(1);
             $table->boolean('is_active')->default(1);
             $table->integer('page_showing')->default(1);
-            $table->string('header_pic');
             $table->softDeletes();
             $table->timestamps();
           });
@@ -32,11 +32,6 @@ class CreateTableArticles extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('articles');
