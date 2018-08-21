@@ -105,7 +105,6 @@ class ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9
         'C' => 
         array (
             'Cron\\' => 5,
-            'Carbon\\' => 7,
         ),
         'A' => 
         array (
@@ -276,14 +275,14 @@ class ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9
         array (
             0 => __DIR__ . '/..' . '/mtdowling/cron-expression/src/Cron',
         ),
-        'Carbon\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
-        ),
         'App\\' => 
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
+    );
+
+    public static $fallbackDirsPsr4 = array (
+        0 => __DIR__ . '/..' . '/nesbot/carbon/src',
     );
 
     public static $prefixesPsr0 = array (
@@ -353,7 +352,10 @@ class ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9
         'AssertionError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/AssertionError.php',
         'Carbon\\Carbon' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Carbon.php',
         'Carbon\\CarbonInterval' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonInterval.php',
+        'Carbon\\CarbonPeriod' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/CarbonPeriod.php',
         'Carbon\\Exceptions\\InvalidDateException' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Exceptions/InvalidDateException.php',
+        'Carbon\\Laravel\\ServiceProvider' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Laravel/ServiceProvider.php',
+        'Carbon\\Translator' => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon/Translator.php',
         'CreateMessagesTable' => __DIR__ . '/../..' . '/database/migrations/2018_03_15_083749_create_messages_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
         'CreateTableArticles' => __DIR__ . '/../..' . '/database/migrations/2017_12_26_045926_create_table_articles.php',
@@ -1861,6 +1863,7 @@ class ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9
         'JakubOnderka\\PhpConsoleColor\\ConsoleColor' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/ConsoleColor.php',
         'JakubOnderka\\PhpConsoleColor\\InvalidStyleException' => __DIR__ . '/..' . '/jakub-onderka/php-console-color/src/JakubOnderka/PhpConsoleColor/InvalidStyleException.php',
         'JakubOnderka\\PhpConsoleHighlighter\\Highlighter' => __DIR__ . '/..' . '/jakub-onderka/php-console-highlighter/src/JakubOnderka/PhpConsoleHighlighter/Highlighter.php',
+        'JsonSerializable' => __DIR__ . '/..' . '/nesbot/carbon/src/JsonSerializable.php',
         'Laravel\\Scout\\Builder' => __DIR__ . '/..' . '/laravel/scout/src/Builder.php',
         'Laravel\\Scout\\Console\\FlushCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/FlushCommand.php',
         'Laravel\\Scout\\Console\\ImportCommand' => __DIR__ . '/..' . '/laravel/scout/src/Console/ImportCommand.php',
@@ -3694,6 +3697,7 @@ class ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9::$prefixDirsPsr4;
+            $loader->fallbackDirsPsr4 = ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9::$fallbackDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9::$prefixesPsr0;
             $loader->classMap = ComposerStaticInit8c85879dd68e1b7376dd53e4dd2a6bb9::$classMap;
 
