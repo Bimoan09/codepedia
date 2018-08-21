@@ -20,8 +20,7 @@ class ArticleController extends Controller
      */
     public function index()
     {
-        $data['articles'] = Article::where('user_id', Auth::user()->id)
-                            ->orderBy('created_at', 'DESC')->paginate(50);
+        $data['articles'] =  Article::where('user_id', Auth::user()->id)->orderBy('created_at', 'DESC')->paginate(50);
 
         return view('admin.articles.index', $data);
     }
@@ -58,11 +57,9 @@ class ArticleController extends Controller
             DB::beginTransaction();
             $article = new Article;
             $article->user_id = Auth::user()->id;
-            // $article->created_at= Carbon::now($article->created_at)->diffForHumans();
             $article->category_id = $request->category_id;
             $article->title = $request->title;
             $article->content = $request->content;
-            // $article->header_pic = $getimageName;
             if(!$request->is_active)
             {
                 $category->is_active = false;

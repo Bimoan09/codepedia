@@ -67,12 +67,7 @@ class CommentController extends Controller
         }
     }
 
-    public function hapusComment(Request $request,$id)
-    {
-    	echo "string";
-    }
-
-    public function reply($id)
+        public function reply($id)
     {
     	$data['comment'] = Comment::find($id);
 
