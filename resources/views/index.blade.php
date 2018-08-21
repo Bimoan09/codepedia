@@ -54,7 +54,7 @@
 			<div class="col-md-12">
 				<div class="box-body">
 					<h4 class="post-title">{{ $data->title }}</h4>
-					<h6 class="date-comment"><i class="fa fa-user"></i> {{ ucwords($data->user->name) }} &nbsp;&nbsp;<i class="fa fa-calendar"></i> {{ date('d M Y', strtotime($data->created_at)) }} &nbsp;&nbsp;<i class="fa fa-comments"> {{ $data->comment->count() }}</i></h6>
+					<h6 class="date-comment"><i class="fa fa-user"></i> {{ ucwords($data->user->name) }} &nbsp;&nbsp;<i class="fa fa-calendar"></i> {{ (($data->created_at->diffForHumans())) }} &nbsp;&nbsp;<i class="fa fa-comments"> {{ $data->comment->count() }}</i></h6>
 					<div class="post-container">
 						<!-- <div class="post-thumb"><img src="{{ asset('/images/'.$data->header_pic)  }}" class="img-responsive" width="304" height="236"></div> -->
 					    <div class="post-content">

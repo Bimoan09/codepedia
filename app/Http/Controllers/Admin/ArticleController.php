@@ -9,6 +9,7 @@ use App\Admin\Category;
 use Auth;
 use DB;
 use File;
+use Carbon\Carbon;
 
 class ArticleController extends Controller
 {
@@ -57,6 +58,7 @@ class ArticleController extends Controller
             DB::beginTransaction();
             $article = new Article;
             $article->user_id = Auth::user()->id;
+            // $article->created_at= Carbon::now($article->created_at)->diffForHumans();
             $article->category_id = $request->category_id;
             $article->title = $request->title;
             $article->content = $request->content;

@@ -58,7 +58,7 @@
 			  					<td><?php echo substr($data->content,0, 100); ?></td>
 			  				
 			  					
-			  					<td class="text-center">{{ date('Y-M-d H:i:s', strtotime($data['created_at'])) }}</td>
+			  					<td class="text-center">{{ (($data->created_at->diffForHumans())) }}</td>
 			  					<td>
 			  						@if($data->is_show == TRUE)
 			  							{{ 'Showing' }}

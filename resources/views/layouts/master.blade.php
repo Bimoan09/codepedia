@@ -235,9 +235,12 @@
   </style>
 </head>
 <body>
+
+<nav class="navbar navbar-dark bg-primary">
 <?php
 $data = App\Admin\Category::where('is_active', TRUE)->get();
-?> 
+?>
+ 
 <div class="container-fluid main">
 
 <nav class="navbar navbar-default">
@@ -292,6 +295,12 @@ $data = App\Admin\Category::where('is_active', TRUE)->get();
   </div>
 </nav>
 
+<form class="form-inline my-2 my-lg-2 pull-right">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button class="btn btn-outline-success my-2 my-lg-2" type="submit">Search</button>
+</form>
+
+</nav>
 <div id="myCarousel" class="carousel carousel-fade slide" data-ride="carousel" data-interval="3000">
   <div class="carousel-inner" role="listbox">
     <div class="item active background a"></div>
